@@ -6,6 +6,9 @@ From: debian:stable-slim
 
 %help
     For fast downloading. Documentation: https://github.com/aria2/aria2
+    To use, add this line to your .rc file: 
+    alias aria2c="module load singularity && singularity exec --cleanenv --bind /home/$USER,/scratch/$USER,/projectsp/f_ak1833_1,/projects,/tmp $PathToYourSingularitySIF aria2c"
+
 %post
 ## basic stuffs
     apt-get update
