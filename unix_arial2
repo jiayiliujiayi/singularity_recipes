@@ -1,0 +1,53 @@
+Bootstrap: docker
+From: debian:stable-slim
+
+%labels
+    AUTHOR JLiu
+
+%help
+    For fast downloading. Documentation: https://github.com/aria2/aria2
+%post
+## basic stuffs
+    apt-get update
+    apt-get install -y --no-install-recommends \
+    bash-completion \
+    ca-certificates \
+    locales
+    echo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen && \
+    /usr/sbin/locale-gen en_US.UTF-8 && \
+    /usr/sbin/update-locale LANG=en_US.UTF-8
+
+## misc stuffs
+    apt-get update && apt-get install -y --no-install-recommends \
+    file \
+    less \
+    openssl \
+    libssl-dev \
+    curl \
+    coreutils \
+    gdebi-core
+
+## devel tools
+    apt-get update && apt-get install -y --no-install-recommends \
+    g++ \
+    gfortran \
+    make \
+    cmake 
+## dependencies
+    apt-get update && apt-get install -y --no-install-recommends \
+    gettext \
+    pkg-config \
+    autoconf-archive \
+    autoconf \
+    automake \
+    autopoint \
+    txt2man \
+    build-essential \
+    autoconf-archive \
+    automake \
+    autopoint \
+    pkg-config \
+    txt2man
+
+## axel
+    apt-get -y install aria2
