@@ -50,7 +50,6 @@ echo 'export NOTEBOOKS_DIR=/home/$NB_USER' >>$SINGULARITY_ENVIRONMENT
     openssl \
     libssl-dev \
     curl \
-    libcurl4-openssl-dev \
     git \
 
 ## devel tools
@@ -106,14 +105,12 @@ echo 'export NOTEBOOKS_DIR=/home/$NB_USER' >>$SINGULARITY_ENVIRONMENT
     libreadline-dev \
     libpcre3-dev \
     libgsl-dev \
-    libssl-dev \
     libcurl4-openssl-dev \
     wget
 
 # jags for infercnv
     apt-get update && apt-get install -y --no-install-recommends \
     jags \
-    libxml2-dev \
     libstdc++6
 
 ## install conda dependencies
